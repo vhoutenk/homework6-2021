@@ -1,0 +1,144 @@
+/* BODY alegreya sans sc font with serif as a backup 
+background is concrete_seamless.png and background color is #f1f1f1*/
+
+body{
+    font-family: 'Alegreya Sans SC', serif;
+    background: url('../images/concrete_seamless.png') no-repeat center;
+    background-size: cover;
+    background-color:  #f1f1f1; 
+}
+
+/*HEADER center image header 
+center nav
+nav in alegreya font
+nav is capitilized with the first letter larger
+line above 
+line below 
+USE FLEXBOX 
+*/
+header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*LINKS dont chance color when they have been navigated to
+center the nave links */
+a:visited{
+    color: blue;
+}
+
+/*card class headers background: #288088 
+boarder: solid 2px  #45DAD, 
+padding 20px top and bottom 
+border radius 7px top left and right corners */
+
+.card header{
+    display:flex;
+    background: #288088;
+    border: solid 2px #45ADAD; 
+    padding: 20px 0px; 
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.card{ 
+    display: flex; 
+    flex-direction: column;
+    flex-basis: 450px;
+}
+
+.gallery{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* selects all children of gallery*/
+
+.gallery > * {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+ /*Animate the logo class with keyframes.   
+It should start at a width of 50px and grow to 425px. 
+It should also start with an opacity of 0 and end with an opacity of 1.
+The animation should take 5 seconds and not-repeat.  
+Use animation-name followed by animation-duration (rather than the shortcut)
+to get full credit on the autograder */
+@keyframes logo{
+    from{width: 50px;
+    opacity:0;}
+
+    to{width: 425px;
+    opacity:1;}
+}
+#logo{
+    animation-name: logo;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+
+/*use flex-wrap when doing the pictures */
+@media screen and (min-width: 850px) {
+
+    header{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: center;
+    }
+    .card{
+        display: flex;
+        justify-content: center;
+        flex-basis:250px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    body{
+        background-image:none;
+        font: fallback;
+    }
+    .nav_links{
+        display:flex;
+        justify-content:space-evenly;
+    }
+    .gallery, #gallery{
+        display: none;
+    }
+
+    .card{
+        display: flex;
+        border: solid 2px #45ADDD;
+        flex-basis: 250px; 
+    }
+
+    .pricing {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-end;
+
+    }
+
+}
